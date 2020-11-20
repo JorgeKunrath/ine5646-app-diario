@@ -34,9 +34,9 @@ app.get('/chave', (req, res) => res.json(GOOGLE_CLIENT_ID))
 
 app.post('/diario/busca', async (req, res) =>{
   const token = req.body.token
-  const isValid = await validaToken(token)
-  if (isValid){
-    const obj = await getEntradas()
+  const userEmail = await validaToken(token)
+  if (userEmail){
+    const obj = await getEntradas(userEmail)
     res.json(obj)
   }
   else{

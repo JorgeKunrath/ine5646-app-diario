@@ -1,6 +1,6 @@
 import { EntradaDiario, Diario } from './modelos'
 
-const URL_BASE = 'https://localhost:3000/diario'
+const URL_BASE = 'https://localhost:3005/diario'
 
 async function carregaDados (userToken) {
   const entradas = await acessaEntradas(userToken)
@@ -12,7 +12,7 @@ async function carregaDados (userToken) {
 }
 
 async function acessaEntradas ( userToken) {
-  const u = `${URL_BASE}/busca/${userToken}`
+  const u = `${URL_BASE}/busca/`
   const jsonData = JSON.stringify({token: userToken})
   
   const resp = await window.fetch(u, { method: 'POST',
