@@ -64,4 +64,4 @@ app.post('/diario/adiciona', async (req, res) =>{
 const server = https.createServer(opcoes, app)
 setupBDDriver()
 // eslint-disable-next-line no-console
-server.listen(PORTA, () => console.log(`No ar, HTTPS porta ${PORTA}`))
+server.listen(PORTA, () => console.log(`no ar em: https://localhost:${PORTA}`))
